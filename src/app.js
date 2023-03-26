@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {LoadingBar} from "./utils/LoadingBar";
 
 import {RGBELoader} from "three/addons/loaders/RGBELoader";
-import hospital_room from "../assets/hospital-room.glb"
+import hospital_room from "../assets/Math_Place.glb"
 import Stats from "three/addons/libs/stats.module";
 import {getGltfLoader} from "./utils/loaderUtils";
 import {VRButton} from "./utils/VRButton";
@@ -125,15 +125,18 @@ class App {
             function (gltf) {
 
                 const room = gltf.scene;
+                const scale = 0.05
+                room.scale.set(scale, scale, scale)
+                room.position.set(0,-5,-10)
                 self.scene.add(room);
                 self.room = room;
 
-                const animation = gltf.animations[1];
-                const details = animation.name.split('|');
-                const patient = room.getObjectByName(details[0]);
-                self.mixer = new THREE.AnimationMixer(patient);
-                const action = self.mixer.clipAction(gltf.animations[1]);
-                action.play();
+                // const animation = gltf.animations[1];
+                // const details = animation.name.split('|');
+                // const patient = room.getObjectByName(details[0]);
+                // self.mixer = new THREE.AnimationMixer(patient);
+                // const action = self.mixer.clipAction(gltf.animations[1]);
+                // action.play();
 
                 self.loadingBar.visible = false;
 
@@ -191,7 +194,7 @@ class App {
             // Subtask 1.2 Show question slide
 
             const question = self.questions.questions[questionIndex];
-            self.ui.updateElement("header", "Heather");
+            self.ui.updateElement("header", "Quiz");
             self.ui.updateElement("panel", question.text);
             self.ui.updateConfig("prev", "display", "none");
             self.ui.updateConfig("next", "display", "none");
@@ -203,7 +206,7 @@ class App {
             // Subtask 2.2 Prepare show score slide
 
             self.ui.updateElement("header", "Results");
-            self.ui.updateElement("panel", `Your score: ${score}`);
+            self.ui.updateElement("panel", `Congrats, your score: ${score}`);
             self.ui.updateConfig("prev", "display", "none");
             self.ui.updateConfig("next", "display", "none");
             self.playSound(successSound)
