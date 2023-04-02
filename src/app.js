@@ -20,6 +20,8 @@ import option2 from "../assets/audio/option2.mp3"
 import option3 from "../assets/audio/option3.mp3"
 import option4 from "../assets/audio/option4.mp3"
 import option5 from "../assets/audio/option5.mp3"
+import option6 from "../assets/audio/option6.mp3"
+import option7 from "../assets/audio/option7.mp3"
 
 const questionSounds = {
     option1: option1,
@@ -27,6 +29,8 @@ const questionSounds = {
     option3: option3,
     option4: option4,
     option5: option5,
+    option6: option6,
+    option7: option7
 }
 
 import successSound from "../assets/audio/success.mp3"

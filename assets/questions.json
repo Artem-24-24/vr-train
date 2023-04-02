@@ -1,5 +1,6 @@
 {
   "intro": "Welcome to the educational quiz in VR! (1 correct answer = 100 points)",
+
   "questions": [
     {
       "id": "Q0",
@@ -15,7 +16,7 @@
         },
         {
           "text": "What do you mean?",
-          "next": 2
+          "next": 6
         }
       ]
     },
@@ -37,17 +38,6 @@
           "text": "C. London",
           "next": -1
         }
-      ]
-    },
-    {
-      "id": "Q2",
-      "text": "This is a game where you have to give the right answer to a question",
-      "options": [
-        {
-          "text": "Understood",
-          "next": 0
-        }
-
       ]
     },
 
@@ -130,10 +120,19 @@
           "score": 100,
           "next": -1
         },
-
         {
           "text": "C. Liechtenstein",
           "next": -1
+        }
+      ]
+    },
+    {
+      "id": "Q6",
+      "text": "This is a game where you have to give the right answer to a question",
+      "options": [
+        {
+          "text": "Understood",
+          "next": 0
         }
       ]
     }
